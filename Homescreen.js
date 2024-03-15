@@ -98,9 +98,11 @@ const HomeScreen = () => {
                         </TouchableOpacity>
                     ))}
                 </View>
-                <TouchableOpacity onPress={loadMoreTasks}>
-                    <Text style={styles.loadMore}>Load More</Text>
-                </TouchableOpacity>
+                {visibleTasks < taskItems.length && (
+                    <TouchableOpacity onPress={loadMoreTasks}>
+                        <Text style={styles.loadMore}>Load More</Text>
+                    </TouchableOpacity>
+                )}
             </ScrollView>
 
             {/* {Write to Task} */}
